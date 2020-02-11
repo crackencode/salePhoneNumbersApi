@@ -24,6 +24,7 @@ Route::middleware('jwt.refresh')->get('/token/refresh', 'AuthController@refresh'
 // API
 Route::group(['prefix' => 'phoneNumbers', 'middleware' => 'jwt.auth'], function () {
     Route::get('', 'PhoneNumberController@getPhoneNumbers');
+    Route::get('all', 'PhoneNumberController@getAllPhoneNumbers');
     Route::get('country/{country}', 'PhoneNumberController@getPhoneNumbersByCountry')->where(['country' => '[a-zA-Z]{2}']);
     Route::get('phoneNumber/{phoneNumber}', 'PhoneNumberController@getPhoneNumbersByPhoneNumber')->where(['phoneNumber' => '[0-9]*']);
     Route::get('country/{country}/phoneNumber/{phoneNumber}', 'PhoneNumberController@getPhoneNumbersByCountryAndPhoneNumber')->where(['country' => '[a-zA-Z]{2}', 'phoneNumber' => '[0-9]*']);

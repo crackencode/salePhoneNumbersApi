@@ -78,6 +78,7 @@ Routes
     | POST     | api/login                                                    | no              |
     | POST     | api/auth/logout                                              | yes             |
     | GET      | api/phoneNumbers                                             | yes             |
+    | GET      | api/phoneNumbers/all                                         | yes             |
     | GET      | api/phoneNumbers/country/{country}                           | yes             |
     | GET      | api/phoneNumbers/country/{country}/phoneNumber/{phoneNumber} | yes             |
     | GET      | api/phoneNumbers/phoneNumber/{phoneNumber}                   | yes             |

@@ -26,6 +26,20 @@ class PhoneNumberController extends Controller
     }
 
     /**
+     * @return ResponseServiceProvider
+     */
+    public function getAllPhoneNumbers()
+    {
+        $phoneNumbers = PhoneNumber::all()->load('country');
+
+        if ($phoneNumbers) {
+            return response()->success('', $phoneNumbers);
+        }
+
+        return response()->error('There are no phone numbers');
+    }
+
+    /**
      * @param string $countryCode
      *
      * @return ResponseServiceProvider
